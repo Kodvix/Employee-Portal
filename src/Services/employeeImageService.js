@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8080/api/employee-images';
+const API_URL = 'http://192.168.1.10:8080/api/employee-images';
 
 export const fetchAllDocuments = () => axios.get(API_URL);
 

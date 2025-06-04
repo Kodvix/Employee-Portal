@@ -9,7 +9,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { FaUsers, FaCheckCircle, FaEnvelopeOpenText, FaTasks } from 'react-icons/fa';
 import defaultAvatar from '../../assets/images/user1.png';
 
-const API_BASE_URL = 'http://localhost:8080/api';
+const API_BASE_URL = 'http://192.168.1.10:8080/api';
 
 const AdminDashboard = () => {
   const [employees, setEmployees] = useState([]);

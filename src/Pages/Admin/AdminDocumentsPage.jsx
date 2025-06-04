@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useAuth } from '../../context/AuthContext';
 
-const API_BASE_URL = 'http://localhost:8080/api';
+const API_BASE_URL = 'http://192.168.1.10:8080/api';
 
 // Helper to get file extension from potential MIME type or filename
 const getFileExtension = (mimeTypeOrFileName) => {
@@ -196,7 +196,7 @@ const AdminDocumentsPage = () => {
       const response = await axios.post(`${API_BASE_URL}/documents/upload/${selectedEmployee}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
-        }
+        }       
       });
 
       if (response.data) {

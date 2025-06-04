@@ -14,7 +14,7 @@ import {
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
-const API_BASE_URL = 'http://localhost:8080/api';
+const API_BASE_URL = 'http://192.168.1.10:8080/api';
 
 const EmployeeProfile = () => {
   const { employeeId, isAuthenticated, logout } = useAuth();

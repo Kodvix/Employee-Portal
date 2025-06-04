@@ -3,7 +3,7 @@ import styles from './OfficeEventsPage.module.css';
 import axios from 'axios';
 
 // Configure axios with base URL
-axios.defaults.baseURL = 'http://localhost:8080';
+axios.defaults.baseURL = 'http://192.168.1.10:8080';
 
 const OfficeEventPage = () => {
   const [events, setEvents] = useState([]);

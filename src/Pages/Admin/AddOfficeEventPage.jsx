@@ -3,7 +3,7 @@ import axios from "axios";
 import styles from "./AddOfficeEventPage.module.css";
 import NoImage from "../../assets/images/No-image.jpg";
 
-const API_URL = "http://localhost:8080/api/events";
+const API_URL = "http://192.168.1.10:8080/api/events";
 
 const AddOfficeEventPage = () => {
   const [showForm, setShowForm] = useState(false);

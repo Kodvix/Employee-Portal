@@ -15,7 +15,7 @@ const employeeOptions = employees.map((emp) => ({
 useEffect(() => {
   const fetchEmployees = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/employee');
+      const response = await fetch('http://192.168.1.10:8080/api/employee');
       if (response.ok) {
         const data = await response.json();
         const employeesArray = Array.isArray(data) ? data : data.data || [];
@@ -179,7 +179,7 @@ const handleUpdateRecord = async () => {
   }
 
   try {
-    const response = await fetch(`http://localhost:8080/api/attendances/${selectedRecord.id}`, {
+    const response = await fetch(`http://192.168.1.10:8080/api/attendances/${selectedRecord.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -224,7 +224,7 @@ const handleCreateRecord = async () => {
   }
 
   try {
-    const response = await fetch('http://localhost:8080/api/attendances', {
+    const response = await fetch('http://192.168.1.10:8080/api/attendances', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -260,7 +260,7 @@ const handleDeleteRecord = async (recordId) => {
   if (!window.confirm('Are you sure you want to delete this attendance record?')) return;
 
   try {
-    const response = await fetch(`http://localhost:8080/api/attendances/${recordId}`, {
+    const response = await fetch(`http://192.168.1.10:8080/api/attendances/${recordId}`, {
       method: 'DELETE',
     });
 
@@ -291,7 +291,7 @@ const handleDeleteRecord = async (recordId) => {
 useEffect(() => {
   const fetchAttendanceRecords = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/attendances');
+      const response = await fetch('http://192.168.1.10:8080/api/attendances');
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       const data = await response.json();
 

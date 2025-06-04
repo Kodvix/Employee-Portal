@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8080/api';
+const API_BASE_URL = 'http://192.168.1.10:8080/api';
 
 // Employee APIs
 export const getEmployeeDashboard = () => axios.get(`${API_BASE_URL}/employee/dashboard/employee`);
@@ -18,9 +18,9 @@ export const createLeaveRequest = (employeeId, leaveData) => {
 
 
 
-export const  getCompanyId  = (id , companyData) =>axios.get(`http://localhost:8080/api/companies/${id}` ,companyData);
+export const  getCompanyId  = (id , companyData) =>axios.get(`http://192.168.1.10:8080/api/companies/${id}` ,companyData);
 
-export const getProjectId = (id, projectData) => axios.get(`http://localhost:8080/api/projects/${id}`, projectData);
+export const getProjectId = (id, projectData) => axios.get(`http://192.168.1.10:8080/api/projects/${id}`, projectData);
 // Task APIs
 export const getAllTasks = () => axios.get(`${API_BASE_URL}/tasks//employee/`);
 export const getTaskById = (id) => axios.get(`${API_BASE_URL}/tasks/${id}`);

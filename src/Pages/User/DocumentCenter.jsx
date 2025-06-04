@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useAuth } from '../../context/AuthContext'; // Import useAuth hook
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirects
 
-const API_BASE_URL = 'http://localhost:8080/api';
+const API_BASE_URL = 'http://192.168.1.10:8080/api';
 
 // Helper to map simple type to MIME type - keeping for potential future use or fallback
 const getMimeTypeFromSimpleType = (fileType) => {
@@ -330,7 +330,7 @@ const DocumentCenter = () => {
        console.log('file type:', uploadingFile.type);
 
       const response = await axios.post(
-        `http://localhost:8080/api/documents/upload/${employeeId}`,
+        `http://192.168.1.10:8080/api/documents/upload/${employeeId}`,
         formData,
         {
           headers: {

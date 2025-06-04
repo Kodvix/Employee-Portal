@@ -1,24 +1,7 @@
-// // src/services/employeeService.js
-// import axios from '../api/axios';
-
-// export const getEmployeeById = (id) => axios.get(`/employee/${id}`);
-// export const getEmployeeByEmail = (email) => axios.get(`/employee/email/${email}`);
-// export const getEmployeesByDepartment = (dept) => axios.get(`/employee/department/${dept}`);
-// export const updateEmployeeById = (id, data) => axios.put(`/employee/${id}`, data);
-// export const deleteEmployeeById = (id) => axios.delete(`/employee/${id}`);
 
 
-// // src/services/employeeService.js
-// import axios from '../api/axios';
 
-// export const getEmployeeById = (id) => axios.get(`/employee/${id}`);
-// export const getEmployeeByEmail = (email) => axios.get(`/employee/email/${email}`);
-// export const getEmployeesByDepartment = (dept) => axios.get(`/employee/department/${dept}`);
-// export const updateEmployeeById = (id, data) => axios.put(`/employee/${id}`, data);
-// export const deleteEmployeeById = (id) => axios.delete(`/employee/${id}`);
-
-
-const API_BASE_URL = 'http://localhost:8080/api';
+const API_BASE_URL = 'http://192.168.1.10:8080/api';
 
 class EmployeeService {
   // Get all employees

@@ -12,7 +12,7 @@ import {
 } from "react-icons/io5";
 import "./HRRequestPage.css";
 
-const BASE_URL = 'http://localhost:8080/api/complaints';
+const BASE_URL = 'http://192.168.1.10:8080/api/complaints';
 
 const requestTypes = {
   "Leave Request": {
@@ -70,7 +70,7 @@ const createComplaint = async (complaintData) => {
       employeeId: complaintData.employeeId
     });
 
-    const response = await axios.post("http://localhost:8080/api/complaints", formData, {
+    const response = await axios.post("http://192.168.1.10:8080/api/complaints", formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
         'Accept': '*/*'
@@ -178,7 +178,7 @@ const createLeaveRequest = async (leaveData, employeeId) => {
       formData.append('leaveDoc', leaveData.attachment);
     }
 
-    const response = await axios.post(`http://localhost:8080/api/leaves/${employeeId}`, formData, {
+    const response = await axios.post(`http://192.168.1.10:8080/api/leaves/${employeeId}`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
@@ -210,7 +210,7 @@ const createLeaveRequest = async (leaveData, employeeId) => {
 
 const getLeaveRequestById = async (id) => {
   try {
-    const response = await axios.get(`http://localhost:8080/api/leaves/${id}`);
+    const response = await axios.get(`http://192.168.1.10:8080/api/leaves/${id}`);
     console.log(response.data);
     return response.data;
   } catch (error) {
@@ -221,7 +221,7 @@ const getLeaveRequestById = async (id) => {
 
 const getLeaveRequestsByEmployeeId = async (employeeId) => {
   try {
-    const response = await axios.get(`http://localhost:8080/api/leaves/employee/${employeeId}`, {
+    const response = await axios.get(`http://192.168.1.10:8080/api/leaves/employee/${employeeId}`, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -237,7 +237,7 @@ const getLeaveRequestsByEmployeeId = async (employeeId) => {
 
 const deleteLeaveRequest = async (id) => {
   try {
-    const response = await axios.delete(`http://localhost:8080/api/leaves/${id}`);
+    const response = await axios.delete(`http://192.168.1.10:8080/api/leaves/${id}`);
     console.log(response.data);
     return response.data;
   } catch (error) {
@@ -248,7 +248,7 @@ const deleteLeaveRequest = async (id) => {
 
 const getHolidays = async () => {
   try {
-    const response = await axios.get('http://localhost:8080/api/holiday/', {
+    const response = await axios.get('http://192.168.1.10:8080/api/holiday/', {
       headers: {
         'Content-Type': 'application/json',
         'Accept': '*/*'

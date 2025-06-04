@@ -107,7 +107,7 @@ const AdminEmployeeManagement = () => {
     status: 'Active',
     username: '',
     password: '',
-    salary: 75000,
+    salary: '',
     // Address fields
     address: {
       street: '',
@@ -237,7 +237,7 @@ const AdminEmployeeManagement = () => {
         status: 'Active',
         username: '',
         password: '',
-        salary: 75000,
+        salary: '',
         address: {
           street: '',
           city: '',
@@ -1439,7 +1439,7 @@ const AdminEmployeeManagement = () => {
                     <input
                       type="number"
                       value={newEmployee.salary}
-                      onChange={(e) => setNewEmployee({...newEmployee, salary: parseFloat(e.target.value) || 75000})}
+                      onChange={(e) => setNewEmployee({...newEmployee, salary: parseFloat(e.target.value) || ''})}
                       placeholder="Enter salary"
                     />
                   </div>

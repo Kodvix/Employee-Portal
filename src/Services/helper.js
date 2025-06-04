@@ -2,7 +2,7 @@
 
 import axios from 'axios';
 
-export const BASE_URL = 'https://localhost:8081/api';
+export const BASE_URL = 'https://192.168.1.10:8081/api';
 
 export const myAxios = axios.create(({
     baseURL : BASE_URL,

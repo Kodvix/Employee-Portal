@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 // Configure axios with base URL
-axios.defaults.baseURL = 'http://localhost:8080';
+axios.defaults.baseURL = 'http://192.168.1.10:8080';
 
 const COLORS = ['#00C49F', '#FF8042', '#0088FE', '#FFBB28'];
 

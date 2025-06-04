@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8080'; 
+const BASE_URL = 'http://192.168.1.10:8080'; 
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
   headers: {
@@ -9,7 +9,7 @@ const axiosInstance = axios.create({
   withCredentials: true, // If you're using cookies or sessions
 });
 const instance = axios.create({
-  baseURL: 'http://localhost:8080/api',
+  baseURL: 'http://192.168.1.10:8080/api',
   headers: {
     'Content-Type': 'application/json',
   },

@@ -150,7 +150,7 @@ const AdminHRManagementPage = () => {
         return;
       }
 
-      const response = await axios.get("http://localhost:8080/api/leaves", {
+      const response = await axios.get("http://192.168.1.10:8080/api/leaves", {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
@@ -216,7 +216,7 @@ const AdminHRManagementPage = () => {
     try {
       setActionInProgress(true);
 
-      const response = await axios.get(`http://localhost:8080/api/leaves/${leaveId}`, {
+      const response = await axios.get(`http://192.168.1.10:8080/api/leaves/${leaveId}`, {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
@@ -246,7 +246,7 @@ const AdminHRManagementPage = () => {
         formData.append('leaveDoc', updatedLeave.leaveDoc[0]);
       }
 
-      await axios.put(`http://localhost:8080/api/leaves/${leaveId}`, formData, {
+      await axios.put(`http://192.168.1.10:8080/api/leaves/${leaveId}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -277,7 +277,7 @@ const AdminHRManagementPage = () => {
   const deleteLeaveRequest = async (leaveId) => {
     try {
       console.log(`Deleting leave request with ID: ${leaveId}`);
-      await axios.delete(`http://localhost:8080/api/leaves/${leaveId}`);
+      await axios.delete(`http://192.168.1.10:8080/api/leaves/${leaveId}`);
       
       setRequests(prev => prev.filter(req => req.id !== leaveId));
       closeDetailsModal();
@@ -290,7 +290,7 @@ const AdminHRManagementPage = () => {
   const deleteComplaint = async (complaintId) => {
     try {
       console.log(`Deleting complaint with ID: ${complaintId}`);
-      await axios.delete(`http://localhost:8080/api/complaints/${complaintId}`);
+      await axios.delete(`http://192.168.1.10:8080/api/complaints/${complaintId}`);
       
       setRequests(prev => prev.filter(req => req.id !== complaintId));
       closeDetailsModal();
@@ -348,7 +348,7 @@ const AdminHRManagementPage = () => {
       
       if (selectedRequest.type === "HR Complaint/Feedback") {
         // Get current complaint data
-        const response = await axios.get(`http://localhost:8080/api/complaints/${selectedRequest.id}`);
+        const response = await axios.get(`http://192.168.1.10:8080/api/complaints/${selectedRequest.id}`);
         const currentComplaint = response.data;
         
         // Map action to status
@@ -380,7 +380,7 @@ const AdminHRManagementPage = () => {
 
         // Update the complaint using query parameters
         const updateResponse = await axios.put(
-          `http://localhost:8080/api/complaints/${selectedRequest.id}?type=${encodeURIComponent(type)}&description=${encodeURIComponent(description)}&status=${encodeURIComponent(status)}`,
+          `http://192.168.1.10:8080/api/complaints/${selectedRequest.id}?type=${encodeURIComponent(type)}&description=${encodeURIComponent(description)}&status=${encodeURIComponent(status)}`,
           formData,
           {
             headers: {
@@ -414,7 +414,7 @@ const AdminHRManagementPage = () => {
         setActionInProgress(false);
         closeDetailsModal();
       } else if (selectedRequest.type === "Leave Request") {
-        const response = await axios.get(`http://localhost:8080/api/leaves/${selectedRequest.id}`, {
+        const response = await axios.get(`http://192.168.1.10:8080/api/leaves/${selectedRequest.id}`, {
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -445,7 +445,7 @@ const AdminHRManagementPage = () => {
           formData.append('leaveDoc', updatedLeave.leaveDoc[0]);
         }
 
-        await axios.put(`http://localhost:8080/api/leaves/${selectedRequest.id}`, formData, {
+        await axios.put(`http://192.168.1.10:8080/api/leaves/${selectedRequest.id}`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
@@ -559,7 +559,7 @@ const AdminHRManagementPage = () => {
         console.log("Starting to fetch all requests...");
 
         console.log("Fetching leave requests...");
-        const leaveRes = await axios.get("http://localhost:8080/api/leaves/", {
+        const leaveRes = await axios.get("http://192.168.1.10:8080/api/leaves/", {
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -597,7 +597,7 @@ const AdminHRManagementPage = () => {
         console.log("Formatted leaves:", formattedLeaves);
 
         console.log("Fetching complaints...");
-        const complaintsRes = await axios.get("http://localhost:8080/api/complaints", {
+        const complaintsRes = await axios.get("http://192.168.1.10:8080/api/complaints", {
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -682,7 +682,7 @@ const AdminHRManagementPage = () => {
 
       console.log('Sending complaint data:', complaint);
 
-      const response = await axios.post("http://localhost:8080/api/complaints", complaint, {
+      const response = await axios.post("http://192.168.1.10:8080/api/complaints", complaint, {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
@@ -704,7 +704,7 @@ const AdminHRManagementPage = () => {
 
   const updateComplaint = async (id, complaintData) => {
     try {
-      const currentComplaint = await axios.get(`http://localhost:8080/api/complaints/${id}`);
+      const currentComplaint = await axios.get(`http://192.168.1.10:8080/api/complaints/${id}`);
       
       const updatedComplaint = {
         id: id,
@@ -721,7 +721,7 @@ const AdminHRManagementPage = () => {
 
       console.log('Sending complaint update:', updatedComplaint);
 
-      const response = await axios.put(`http://localhost:8080/api/complaints/${id}`, updatedComplaint, {
+      const response = await axios.put(`http://192.168.1.10:8080/api/complaints/${id}`, updatedComplaint, {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'

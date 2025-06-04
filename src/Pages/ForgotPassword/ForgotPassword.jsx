@@ -176,7 +176,7 @@ const ForgotPassword = () => {
   const navigate = useNavigate();
 
 
-  const API_URL = "http://localhost:8080/api/auth";
+  const API_URL = "http://192.168.1.10:8080/api/auth";
 
 
   // const handleOtpChange = (index, value) => {

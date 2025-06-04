@@ -26,7 +26,7 @@ const AdminHolidayPage = () => {
   const fetchHolidays = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:8080/api/holiday/');
+      const response = await axios.get('http://192.168.1.10:8080/api/holiday/');
       setHolidays(response.data);
       setError(null);
     } catch (error) {
@@ -40,7 +40,7 @@ const AdminHolidayPage = () => {
   const handleAddHoliday = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/api/holiday/save', formData);
+      const response = await axios.post('http://192.168.1.10:8080/api/holiday/save', formData);
       setHolidays([...holidays, response.data]);
       setShowAddModal(false);
       setFormData({ nameOfHoliday: '', description: '', date: '' });
@@ -53,7 +53,7 @@ const AdminHolidayPage = () => {
   const handleEditHoliday = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:8080/api/holiday/save`, {
+      const response = await axios.put(`http://192.168.1.10:8080/api/holiday/save`, {
         ...formData,
         holidayId: selectedHoliday.holidayId
       });
@@ -72,7 +72,7 @@ const AdminHolidayPage = () => {
   const handleDeleteHoliday = async (holidayId) => {
     if (window.confirm('Are you sure you want to delete this holiday?')) {
       try {
-        await axios.delete(`http://localhost:8080/api/holiday?holidayId=${holidayId}`);
+        await axios.delete(`http://192.168.1.10:8080/api/holiday?holidayId=${holidayId}`);
         setHolidays(holidays.filter(holiday => holiday.holidayId !== holidayId));
       } catch (error) {
         console.error('Error deleting holiday:', error);

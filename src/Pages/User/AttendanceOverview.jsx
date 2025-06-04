@@ -6,7 +6,7 @@ import axios from 'axios';
 import { useAuth } from '../../context/AuthContext'; // Import useAuth hook
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirects
 
-const API_BASE_URL = 'http://localhost:8080/api';
+const API_BASE_URL = 'http://192.168.1.10:8080/api';
 
 const AttendancePage = () => {
   // Get authentication data from context
