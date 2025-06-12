@@ -1,0 +1,37 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    background-color: #2A3165;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000; /* Ensure it stays above other elements */
+  }
+  
+  .logo img {
+    width: 130px;
+    height: 39px;
+    margin-bottom: 2rem;
+  }
+  
+  .sidebarMenu a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: white;
+    padding: 0.75rem 0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebarMenu a:hover {
+    background-color: #16213e;
+    border-radius: 6px;
+    padding-left: 0.5rem;
+  }
+  
