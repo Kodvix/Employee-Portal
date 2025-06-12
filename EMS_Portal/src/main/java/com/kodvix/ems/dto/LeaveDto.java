@@ -32,4 +32,13 @@ public class LeaveDto {
 
     @Schema(description = "Leave document attached by the employee")
     private byte[] leaveDoc;
+
+    @Schema(description = "Employee's first name", example = "Khushi")
+    private String firstName;
+
+    @Schema(description = "Employee's last name", example = "Kala")
+    private String lastName;
+
+    @Schema(description = "Department", example = "IT")
+    private String department;
 }

@@ -78,7 +78,12 @@ public class LeaveServiceImpl implements LeaveService {
 
     private LeaveDto convertToDto(LeaveDao leaveDao) {
         LeaveDto dto = modelMapper.map(leaveDao, LeaveDto.class);
-        dto.setEmployeeId(leaveDao.getEmployee().getId());
+        if (leaveDao.getEmployee() != null) {
+            dto.setEmployeeId(leaveDao.getEmployee().getId());
+            dto.setFirstName(leaveDao.getEmployee().getFirstName());
+            dto.setLastName(leaveDao.getEmployee().getLastName());
+            dto.setDepartment(leaveDao.getEmployee().getDepartment());
+        }
         return dto;
     }
 
